@@ -23,7 +23,7 @@
   "homepage": "https://github.com/dustin-H/isojs-demo",
   "dependencies": {
     "express": "^4.12.3",
-    "isojs": "0.0.19",
+    "isojs": "0.0.21",
     "mongoose": "^4.0.2",
     "superagent": "^1.2.0",
     "react": "0.13.2",
