@@ -1,12 +1,9 @@
 
 var React = require('react');
-var Router = require('react-router'); // or var Router = ReactRouter; in browsers
+var Router = require('react-router');
 
 var DefaultRoute = Router.DefaultRoute;
-var Link = Router.Link;
 var Route = Router.Route;
-var Redirect = Router.Redirect;
-var RouteHandler = Router.RouteHandler;
 var NotFoundRoute = Router.NotFoundRoute;
 
 var MainApp = require('./components/MainApp.react');
@@ -24,6 +21,5 @@ var routes = (
      //<NotFoundRoute handler={Body} />
    </Route>
 );
-
 
 module.exports = routes;

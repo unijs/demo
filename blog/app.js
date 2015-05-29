@@ -42,16 +42,12 @@ module.exports = function() {
 
 	var app = express();
 
-	app.use(function(req, res, next) {
-		console.log('api call', req.path);
+	/*app.use(function(req, res, next){
+		console.log('head', req.headers);
 		next();
-		/*setTimeout(function(){
-			next();
-		}, 1000);*/
-	})
+	});*/
 
 	app.get('/getpost/:id', function(req, res) {
-		//console.log('HAHAHAHHAHAHAHHAHAHAHAHHAAHAHH: /getpost/', req.params.id);
 		if (req.params != null && req.params.id != null) {
 			var id = req.params.id;
 			BlogPost.findOne({

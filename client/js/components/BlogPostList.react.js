@@ -32,21 +32,19 @@ var BlogPostList = React.createClass({
    componentDidMount: function(){
       this.loadMenu();
    },
-  render: function() {
-
-  	return (
-        <div className={'wrap'}>
-       <div style={{'textAlign': 'justify'}}>
-       <h1>This is a list of all posts:</h1>
-       <br/>
-          {this.state.menu.map(function(result) {
-             return <div key={result._id}><Link to={"/blogpost/"+result._id}>{result.title}</Link></div>;
-          })}
-      </div>
-      </div>
-    );
-  }
-
+   render: function() {
+      return (
+         <div className={'wrap'}>
+            <div style={{'textAlign': 'justify'}}>
+               <h1>This is a list of all posts:</h1>
+               <br/>
+               {this.state.menu.map(function(result) {
+                  return <div key={result._id}><Link to={"/blogpost/"+result._id}>{result.title}</Link></div>;
+               })}
+            </div>
+         </div>
+      );
+   }
 });
 
 module.exports = BlogPostList;

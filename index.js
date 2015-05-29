@@ -34,11 +34,12 @@ var config = {
 	getApiServerAddress: function() {
 		return 'http://localhost:' + port + '/';
 	},
-	uglify: false,
+	uglify: true, // Switch this to false for easier client side debugging
 	debug: true,
 	head: '<title>isoJS</title><link href="http://fonts.googleapis.com/css?family=Dosis" rel="stylesheet" type="text/css"><link rel="stylesheet" href="/css/app.css"/>'
 };
 
+isojs.checkLocation.setServer();
 var isoJSapp = isojs.appBuilder(config);
 
 app.use(isoJSapp());

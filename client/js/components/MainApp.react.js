@@ -16,7 +16,6 @@ var MainApp = React.createClass({
            </div>
         );
     }
-
 });
 
 module.exports = MainApp;
