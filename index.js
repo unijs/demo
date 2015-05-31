@@ -8,12 +8,12 @@ var blog = require('./blog/app.js');
 var app = express();
 
 // Loading Database:
-var db = mongoose.connect('mongodb://localhost/isojs-demo');
+//var db = mongoose.connect('mongodb://localhost/isojs-demo');
 
-var port = 1234;
+app.set('port', (process.env.PORT || 5000));
 
-app.listen(port, function() {
-	console.log("STARTED SERVER! PORT: ", port);
+app.listen(app.get('port'), function() {
+	console.log("STARTED SERVER! PORT: ", app.get('port'));
 });
 
 app.use(function(req, res, next) {
@@ -32,7 +32,7 @@ app.use('/blog', blog());
 var config = {
 	routesPath: 'client/js/Routes.js',
 	getApiServerAddress: function() {
-		return 'http://localhost:' + port + '/';
+		return 'http://localhost:' + app.get('port') + '/';
 	},
 	uglify: true, // Switch this to false for easier client side debugging
 	debug: true,

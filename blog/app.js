@@ -1,5 +1,5 @@
 var express = require('express');
-var BlogPost = require('./BlogPost.js');
+//var BlogPost = require('./BlogPost.js');
 
 var initializeDatabase = function() {
 	BlogPost.find(function(err, number) {
@@ -36,7 +36,29 @@ var initializeDatabase = function() {
 	}).limit(1).count();
 }
 
-initializeDatabase();
+
+var post1 = {
+	_id: 'IDeins',
+	title: 'INITIAL POST',
+	content: 'This is my first blogpost ever. So please do not blame on me too much ;-).'
+};
+var post2 = {
+	_id: 'IDzwei',
+	title: 'REACT.JS',
+	content: 'I just wanna say, that React.js is the best JS framework I have ever seen! Please use it!'
+};
+var post3 = {
+	_id: 'IDdrei',
+	title: 'ISOJS FOREVER',
+	content: 'Hoping you like isoJS and will use it in your next project ;-).'
+};
+
+var posts = {};
+posts[post1._id] = post1;
+posts[post2._id] = post2;
+posts[post3._id] = post3;
+
+//initializeDatabase();
 
 module.exports = function() {
 
@@ -50,7 +72,14 @@ module.exports = function() {
 	app.get('/getpost/:id', function(req, res) {
 		if (req.params != null && req.params.id != null) {
 			var id = req.params.id;
-			BlogPost.findOne({
+
+			if (!posts[id]) {
+				console.error('Could not find post (' + id + ')');
+				res.status(404).send('Could not find post!');
+			} else {
+				res.json(posts[id]);
+			}
+			/*BlogPost.findOne({
 				_id: id
 			}, function(err, post) {
 				if (err || !post) {
@@ -59,33 +88,46 @@ module.exports = function() {
 				} else {
 					res.json(post);
 				}
-			});
+			});*/
 		}
 	});
 
 	app.get('/getposts/:max', function(req, res) {
 		if (req.params != null && req.params.max != null) {
 			var max = req.params.max;
-			BlogPost.find(function(err, posts) {
+			var out = [];
+			for(var i in posts){
+				out.push(posts[i]);
+			}
+			res.json(out);
+			/*BlogPost.find(function(err, posts) {
 				if (err || !posts) {
 					console.error('Could not find post (' + id + ')');
 					res.status(404).send('Could not find post!');
 				} else {
 					res.json(posts);
 				}
-			}).limit(max);
+			}).limit(max);*/
 		}
 	});
 
 	app.get('/getmenu', function(req, res) {
-		BlogPost.find(function(err, posts) {
+		var out = [];
+		for(var i in posts){
+			var po = {};
+			po._id = posts[i]._id;
+			po.title = posts[i].title;
+			out.push(po);
+		}
+		res.json(out);
+		/*BlogPost.find(function(err, posts) {
 			if (err || !posts) {
 				console.error('Could not find post (' + id + ')');
 				res.status(404).send('Could not find post!');
 			} else {
 				res.json(posts);
 			}
-		}).limit(3).select('_id title');
+		}).limit(3).select('_id title');*/
 	});
 
 	return app;
