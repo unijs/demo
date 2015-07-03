@@ -1,4 +1,3 @@
-
 var React = require('react');
 var Router = require('react-router');
 
@@ -11,15 +10,16 @@ var Body = require('./components/Body.react');
 var BlogPost = require('./components/BlogPost.react');
 var BlogPostList = require('./components/BlogPostList.react');
 
+
 var routes = (
-   <Route name="main" path="/">
-     <Route path="/" name="app" handler={MainApp}>
-       <Route path="/blogpostlist" name="blog" handler={BlogPostList}/>
-       <Route path="/blogpost/:id" name="blogpost" handler={BlogPost}/>
-       <DefaultRoute handler={Body} />
-     </Route>
-     //<NotFoundRoute handler={Body} />
-   </Route>
+		<Route name="main" path="/">
+			<Route handler={MainApp} name="app" path="/">
+				<Route handler={BlogPostList} name="blog" path="/blogpostlist"/>
+				<Route handler={BlogPost} name="blogpost" path="/blogpost/:id"/>
+			</Route>
+		</Route>
 );
 
+//<DefaultRoute handler={Body} />
+//<NotFoundRoute handler={Body} />
 module.exports = routes;

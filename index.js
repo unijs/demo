@@ -17,6 +17,7 @@ app.listen(app.get('port'), function() {
 });
 
 app.use(function(req, res, next) {
+	console.log('header', req.headers);
 	res.header("Access-Control-Allow-Origin", "*");
 	next();
 });

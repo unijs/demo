@@ -1,8 +1,8 @@
 var express = require('express');
 //var BlogPost = require('./BlogPost.js');
 
-var initializeDatabase = function() {
-	BlogPost.find(function(err, number) {
+var initializeDatabase = function () {
+	BlogPost.find(function (err, number) {
 		if (err || !number) {
 			console.error('Could find number of posts!');
 		} else {
@@ -19,24 +19,25 @@ var initializeDatabase = function() {
 					title: 'ISOJS FOREVER',
 					content: 'Hoping you like isoJS and will use it in your next project ;-).'
 				});
-				post1.save(function(err, post) {
-					if (err) return console.error('error when saving post1', err);
+				post1.save(function (err, post) {
+					if (err)
+						return console.error('error when saving post1', err);
 					console.log('saved post1: ', post);
 				});
-				post2.save(function(err, post) {
-					if (err) return console.error('error when saving post2', err);
+				post2.save(function (err, post) {
+					if (err)
+						return console.error('error when saving post2', err);
 					console.log('saved post2: ', post);
 				});
-				post3.save(function(err, post) {
-					if (err) return console.error('error when saving post3', err);
+				post3.save(function (err, post) {
+					if (err)
+						return console.error('error when saving post3', err);
 					console.log('saved post3: ', post);
 				});
 			}
 		}
 	}).limit(1).count();
 }
-
-
 var post1 = {
 	_id: 'IDeins',
 	title: 'INITIAL POST',
@@ -60,7 +61,7 @@ posts[post3._id] = post3;
 
 //initializeDatabase();
 
-module.exports = function() {
+module.exports = function () {
 
 	var app = express();
 
@@ -69,7 +70,7 @@ module.exports = function() {
 		next();
 	});*/
 
-	app.get('/getpost/:id', function(req, res) {
+	app.get('/getpost/:id', function (req, res) {
 		if (req.params != null && req.params.id != null) {
 			var id = req.params.id;
 
@@ -92,11 +93,11 @@ module.exports = function() {
 		}
 	});
 
-	app.get('/getposts/:max', function(req, res) {
+	app.get('/getposts/:max', function (req, res) {
 		if (req.params != null && req.params.max != null) {
 			var max = req.params.max;
 			var out = [];
-			for(var i in posts){
+			for (var i in posts) {
 				out.push(posts[i]);
 			}
 			res.json(out);
@@ -111,9 +112,9 @@ module.exports = function() {
 		}
 	});
 
-	app.get('/getmenu', function(req, res) {
+	app.get('/getmenu', function (req, res) {
 		var out = [];
-		for(var i in posts){
+		for (var i in posts) {
 			var po = {};
 			po._id = posts[i]._id;
 			po.title = posts[i].title;

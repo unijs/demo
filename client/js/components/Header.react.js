@@ -41,7 +41,7 @@ var Header = React.createClass({
                <span className={'nav-menu-div'}>
                    <ul className={'nav-menu'}>
                          {this.state.menu.map(function(result) {
-                            return <Link to={"/blogpost/"+result._id} key={result._id} className="nav-menu-href" activeClassName="highlight">{result.title}</Link>;
+                            return <Link to="blogpost" params={{id: result._id}} key={result._id} className="nav-menu-href" activeClassName="highlight">{result.title}</Link>;
                          })}
                    </ul>
                </span>
