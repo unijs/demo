@@ -9,19 +9,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dustin-H/unijs-demo.git"
+    "url": "https://github.com/unijs/demo.git"
   },
   "keywords": [
     "unijs",
     "react",
     "flux"
   ],
-  "author": "Dustin Hoffner dustin-H/unijs#refactor",
+  "author": "Dustin Hoffner",
   "license": "Apache License Version 2.0",
   "bugs": {
-    "url": "https://github.com/dustin-H/unijs-demo/issues"
+    "url": "https://github.com/unijs/demo/issues"
   },
-  "homepage": "https://github.com/dustin-H/unijs-demo",
+  "homepage": "https://github.com/unijs/demo",
   "dependencies": {
     "express": "^4.12.3",
     "mongoose": "^4.0.2",
