@@ -1,16 +1,16 @@
-var React = require('react');
+import React from 'react';
+import Post from './Post.react';
 
-var Blog = require('./Blog.react');
-
-var Footer = React.createClass({
-	contextTypes: {
-		router: React.PropTypes.func
-	},
-	render: function () {
+class BlogPost extends React.Component {
+	render() {
 		return (
-			<Blog id={this.context.router.getCurrentParams().id}/>
+			<Post id={this.context.router.getCurrentParams().id}/>
 		);
 	}
-});
+}
 
-module.exports = Footer;
+BlogPost.contextTypes = {
+	router: React.PropTypes.func
+};
+
+export default BlogPost;

@@ -1,25 +1,15 @@
-var React = require('react');
-var Router = require('react-router');
+import React from 'react';
+import {Route, DefaultRoute} from 'react-router';
 
-var DefaultRoute = Router.DefaultRoute;
-var Route = Router.Route;
-var NotFoundRoute = Router.NotFoundRoute;
-
-var MainApp = require('./components/MainApp.react');
-var Body = require('./components/Body.react');
-var BlogPost = require('./components/BlogPost.react');
-var BlogPostList = require('./components/BlogPostList.react');
-
+import Main from './components/Main.react';
+import Home from './components/Home.react';
+import BlogPost from './components/BlogPost.react';
 
 var routes = (
-		<Route name="main" path="/">
-			<Route handler={MainApp} name="app" path="/">
-				<Route handler={BlogPostList} name="blog" path="/blogpostlist"/>
-				<Route handler={BlogPost} name="blogpost" path="/blogpost/:id"/>
-			</Route>
-		</Route>
+	<Route handler={Main} name="main" path="/">
+			<Route handler={BlogPost} name="blogpost" path="/:id"/>
+			<DefaultRoute handler={Home} />
+	</Route>
 );
 
-//<DefaultRoute handler={Body} />
-//<NotFoundRoute handler={Body} />
-module.exports = routes;
+export default routes;
