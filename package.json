@@ -1,6 +1,6 @@
 {
   "name": "unijs-demo",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Demo of unijs",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,7 @@
     "react": "0.13.2",
     "react-router": "0.13.3",
     "superagent": "^1.2.0",
-    "unijs": "0.0.27",
-    "unijs-builder": "0.0.6"
+    "unijs": "^0.1.0",
+    "unijs-builder": "^0.1.0"
   }
 }
