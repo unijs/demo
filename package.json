@@ -24,12 +24,11 @@
   "homepage": "https://github.com/unijs/demo",
   "dependencies": {
     "express": "^4.12.3",
-    "mongoose": "^4.0.2",
     "open": "0.0.5",
     "react": "0.13.2",
     "react-router": "0.13.3",
     "superagent": "^1.2.0",
-    "unijs": "0.0.24",
-    "unijs-builder": "0.0.5"
+    "unijs": "0.0.27",
+    "unijs-builder": "0.0.6"
   }
 }
