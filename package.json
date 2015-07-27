@@ -1,32 +1,34 @@
 {
-  "name": "isojs-demo",
+  "name": "unijs-demo",
   "version": "0.0.1",
-  "description": "Demo of isojs",
+  "description": "Demo of unijs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dustin-H/isojs-demo.git"
+    "url": "https://github.com/unijs/demo.git"
   },
   "keywords": [
-    "isojs",
+    "unijs",
     "react",
     "flux"
   ],
-  "author": "Dustin Hoffner dustin-H/isojs#refactor",
+  "author": "Dustin Hoffner",
   "license": "Apache License Version 2.0",
   "bugs": {
-    "url": "https://github.com/dustin-H/isojs-demo/issues"
+    "url": "https://github.com/unijs/demo/issues"
   },
-  "homepage": "https://github.com/dustin-H/isojs-demo",
+  "homepage": "https://github.com/unijs/demo",
   "dependencies": {
     "express": "^4.12.3",
-    "isojs": "0.0.21",
-    "mongoose": "^4.0.2",
-    "superagent": "^1.2.0",
+    "open": "0.0.5",
     "react": "0.13.2",
-    "react-router": "0.13.3"
+    "react-router": "0.13.3",
+    "superagent": "^1.2.0",
+    "unijs": "0.0.27",
+    "unijs-builder": "0.0.6"
   }
 }
