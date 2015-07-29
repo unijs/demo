@@ -14,7 +14,10 @@ class Blog extends React.Component {
 	loadBlogPost(id) {
 		superagent.get('/api/getpost/' + id).accept('application/json').use(unijs.superagentPlugin).end(function(err, res) {
 			if (err) {
-				return alert('Failed to load Post!');
+				return this.setState({
+					title: '404',
+					content: 'Post not Found!'
+				});
 			}
 			this.setState(JSON.parse(res.text));
 		}.bind(this));

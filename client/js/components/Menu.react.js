@@ -17,7 +17,9 @@ class Header extends React.Component {
 	loadMenu() {
 		superagent.get('/api/getmenu').accept('application/json').use(unijs.superagentPlugin).end(function(err, res) {
 			if (err) {
-				return alert('Failed to load menu!');
+				return this.setState({
+					menu: []
+				});
 			}
 			this.setState({
 				menu: JSON.parse(res.text)
