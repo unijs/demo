@@ -5,7 +5,7 @@ import {
 	RouteHandler
 } from 'react-router';
 
-class MainApp extends React.Component {
+class Main extends React.Component {
 	render() {
 		return (
 			<div style={{textAlign: 'center', fontFamily: 'Helvetica, Arial'}}>
@@ -23,4 +23,4 @@ class MainApp extends React.Component {
 	}
 }
 export
-default MainApp;
+default Main;
