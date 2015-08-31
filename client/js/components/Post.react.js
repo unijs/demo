@@ -2,7 +2,7 @@ import React from 'react';
 import superagent from 'superagent';
 import unijs from 'unijs';
 
-class Blog extends React.Component {
+class Post extends React.Component {
 	constructor() {
 		super();
 		this.state = {
@@ -43,6 +43,6 @@ class Blog extends React.Component {
 		);
 	}
 }
-Blog = unijs.extend(Blog);
+Post = unijs.extend(Post);
 
-export default Blog;
+export default Post;

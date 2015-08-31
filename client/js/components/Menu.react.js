@@ -37,7 +37,7 @@ class Header extends React.Component {
 				<ul>
 					<span> - </span>
 					{this.state.menu.map(function(result) { return (
-					<span><Link activeClassName="highlight" className="" key={result._id} params={{id: result._id}} to="blogpost">{result.title}</Link> - </span>); })}
+					<span key={result._id}><Link activeClassName="highlight" className="" params={{id: result._id}} to="blogpost">{result.title}</Link> - </span>); })}
 				</ul>
 			</div>
 		);
